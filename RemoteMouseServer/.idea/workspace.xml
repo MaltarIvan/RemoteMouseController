@@ -21,23 +21,19 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="338" column="48" lean-forward="false" selection-start-line="338" selection-start-column="48" selection-end-line="338" selection-end-column="48" />
+            <state relative-caret-position="127">
+              <caret line="107" column="37" lean-forward="false" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+                <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+                <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+                <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
                 <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+                <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+                <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+                <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientKeyEvents.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ClientKeyEvents.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7560">
-              <caret line="732" column="76" lean-forward="false" selection-start-line="732" selection-start-column="76" selection-end-line="732" selection-end-column="76" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -51,6 +47,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>left</find>
+      <find>ctrl</find>
+    </findStrings>
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -60,6 +62,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/KeyEvents.java" />
+        <option value="$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ActionKey.java" />
         <option value="$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java" />
       </list>
     </option>
@@ -85,9 +88,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -159,10 +162,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../json-20140107.jar!/" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jintellitype-1.3.9/JIntellitype64.dll" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\RemoteMouseController\RemoteMouseServer\src\maltar\apps\remoteMouseServer\params" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -424,7 +432,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -435,19 +443,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26673985" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26454446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22135417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19583334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39846322" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27003294" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -461,7 +469,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="31" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java</url>
+          <line>224</line>
+          <properties />
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java</url>
+          <line>66</line>
+          <properties />
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="53" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -477,7 +499,13 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
             <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -489,7 +517,13 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
             <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -501,38 +535,78 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
             <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="552">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
             <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ActionKey.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
-            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ClientKeyEvents.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7560">
+        <state relative-caret-position="14472">
+          <caret line="603" column="41" lean-forward="true" selection-start-line="603" selection-start-column="41" selection-end-line="603" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/awt/event/KeyEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4848">
+          <caret line="202" column="53" lean-forward="false" selection-start-line="202" selection-start-column="29" selection-end-line="202" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ClientKeyEvents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17568">
           <caret line="732" column="76" lean-forward="false" selection-start-line="732" selection-start-column="76" selection-end-line="732" selection-end-column="76" />
           <folding />
         </state>
@@ -540,12 +614,248 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="338" column="48" lean-forward="false" selection-start-line="338" selection-start-column="48" selection-end-line="338" selection-end-column="48" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
             <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/awt/event/KeyEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4176">
+          <caret line="202" column="53" lean-forward="false" selection-start-line="202" selection-start-column="29" selection-end-line="202" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ClientKeyEvents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17568">
+          <caret line="732" column="76" lean-forward="false" selection-start-line="732" selection-start-column="76" selection-end-line="732" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/awt/event/KeyEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4848">
+          <caret line="202" column="53" lean-forward="true" selection-start-line="202" selection-start-column="29" selection-end-line="202" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ClientKeyEvents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17568">
+          <caret line="732" column="76" lean-forward="false" selection-start-line="732" selection-start-column="76" selection-end-line="732" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ClientKeyEvents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17568">
+          <caret line="732" column="76" lean-forward="false" selection-start-line="732" selection-start-column="76" selection-end-line="732" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ClientKeyEvents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17568">
+          <caret line="732" column="76" lean-forward="false" selection-start-line="732" selection-start-column="76" selection-end-line="732" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/awt/event/KeyEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="208" column="36" lean-forward="false" selection-start-line="208" selection-start-column="36" selection-end-line="208" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ClientKeyEvents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="603" column="41" lean-forward="false" selection-start-line="603" selection-start-column="41" selection-end-line="603" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/params/ActionKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maltar/apps/remoteMouseServer/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="107" column="37" lean-forward="false" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleActionMove#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionClick#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionPress#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionEnter#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionRelease#0;class#Server#0" expanded="false" />
+            <element signature="method#handleActionVolumeControl#0;class#Server#0" expanded="false" />
+            <element signature="method#handleAction#0;class#Server#0" expanded="false" />
+            <element signature="method#getIPAddress#0;class#Server#0" expanded="false" />
           </folding>
         </state>
       </provider>

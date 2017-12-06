@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hr.apps.maltar.remotemousecontroller">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -20,17 +20,17 @@
 
         <service
             android:name=".services.ConnectionIntentService"
-            android:exported="false"/>
-
+            android:exported="false" ></service>
         <service
             android:name=".services.SendDataIntentService"
-            android:exported="false"/>
+            android:exported="false" ></service>
 
         <activity
             android:name=".MouseActivity"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".KalimbaActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

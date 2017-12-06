@@ -6,23 +6,30 @@ import java.awt.event.KeyEvent;
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
+import java.util.Enumeration;
 
+import maltar.apps.remoteMouseServer.params.ActionKey;
 import maltar.apps.remoteMouseServer.params.ClientKeyEvents;
 import org.json.*;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 
 /**
  * Created by Maltar on 10.10.2017..
  */
 public class Server implements Runnable {
+    private static final int PORT = 8888;
     private Socket socket;
     private ServerSocket serverSocket;
     private Thread thread;
     private DataInputStream inputStream;
-    private static JLabel label;
+    private static JLabel labelActions;
+    private static JLabel labelIP;
+    private static JLabel labelPort;
 
     public Server(int port) {
         try {
@@ -57,27 +64,27 @@ public class Server implements Runnable {
         while (thread != null) {
             try {
                 System.out.println("Waiting for a client ...");
-                label.setText("Waiting for a client ...");
+                labelActions.setText("Waiting for a client ...");
                 socket = serverSocket.accept();
                 System.out.println("Client accepted: " + socket);
-                label.setText("Client accepted: " + socket);
+                labelActions.setText("Client accepted: " + socket);
                 open();
                 boolean done = false;
                 while (!done) {
                     try {
                         String line = inputStream.readUTF();
                         System.out.println(line);
-                        label.setText(line);
+                        labelActions.setText(line);
                         handleAction(line);
                     } catch (IOException ioe) {
                         done = true;
                         System.out.println(ioe);
-                        label.setText(ioe.getMessage());
+                        labelActions.setText(ioe.getMessage());
                     }
                 }
             } catch (IOException ioe) {
                 System.out.println("Acceptance Error: " + ioe);
-                label.setText("Acceptance Error: " + ioe);
+                labelActions.setText("Acceptance Error: " + ioe);
             }
         }
     }
@@ -86,11 +93,38 @@ public class Server implements Runnable {
         JFrame frame = new JFrame("Remote Mouse Server");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(400, 300));
-        label = new JLabel();
-        frame.add(label);
+        addComponentsToPane(frame.getContentPane());
         frame.pack();
         frame.setVisible(true);
-        Server server = new Server(8888);
+        Server server = new Server(PORT);
+    }
+
+    private static void addComponentsToPane(Container pane) {
+        pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
+        labelActions = new JLabel();
+        labelIP = new JLabel();
+        labelIP.setText("IP: " + getIPAddress());
+        labelPort = new JLabel();
+        labelPort.setText("PORT: " + String.valueOf(PORT));
+
+        Border labelIPBorder = labelIP.getBorder();
+        Border labelIPMargin = new EmptyBorder(10,10,10,10);
+
+        Border labelPortBorder = labelIP.getBorder();
+        Border labelPortMargin = new EmptyBorder(10,10,70,10);
+
+        labelIP.setBorder(new CompoundBorder(labelIPBorder, labelIPMargin));
+        labelPort.setBorder(new CompoundBorder(labelPortBorder, labelPortMargin));
+
+        Font labelIPFont = labelIP.getFont();
+        Font labelPortFont = labelPort.getFont();
+
+        labelIP.setFont(new Font(labelIPFont.getName(), Font.BOLD, labelIPFont.getSize() * 2));
+        labelPort.setFont(new Font(labelPortFont.getName(), Font.BOLD, labelIPFont.getSize() + 5));
+
+        pane.add(labelIP);
+        pane.add(labelPort);
+        pane.add(labelActions);
     }
 
     private void handleActionMove(String execute, String description) {
@@ -142,10 +176,10 @@ public class Server implements Runnable {
             return;
         }
         switch (description) {
-            case "up":
+            case ActionKey.ACTION_SCROLL_UP:
                 robot.mouseWheel(-1);
                 break;
-            case "down":
+            case ActionKey.ACTION_SCROLL_DOWN:
                 robot.mouseWheel(1);
                 break;
         }
@@ -160,11 +194,29 @@ public class Server implements Runnable {
             return;
         }
         switch (description) {
-            case "left":
+            case ActionKey.ACTION_LEFT_MOUSE:
                 robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
                 break;
-            case "right":
+            case ActionKey.ACTION_RIGHT_MOUSE:
                 robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
+                break;
+            case ActionKey.ACTION_MOVE_LEFT:
+                robot.keyPress(KeyEvent.VK_LEFT);
+                break;
+            case ActionKey.ACTION_MOVE_RIGHT:
+                robot.keyPress(KeyEvent.VK_RIGHT);
+                break;
+            case ActionKey.ACTION_JUMP:
+                robot.keyPress(KeyEvent.VK_SPACE);
+                break;
+            case ActionKey.ACTION_ESC:
+                robot.keyPress(KeyEvent.VK_ESCAPE);
+                break;
+            case ActionKey.ACTION_ENTER:
+                robot.keyPress(KeyEvent.VK_ENTER);
+                break;
+            case ActionKey.ACTION_SWIPE:
+                robot.keyPress(KeyEvent.VK_CONTROL);
                 break;
         }
     }
@@ -351,11 +403,57 @@ public class Server implements Runnable {
             return;
         }
         switch (description) {
-            case "left":
+            case ActionKey.ACTION_LEFT_MOUSE:
                 robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
                 break;
-            case "right":
+            case ActionKey.ACTION_RIGHT_MOUSE:
                 robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
+                break;
+            case ActionKey.ACTION_MOVE_LEFT:
+                robot.keyRelease(KeyEvent.VK_LEFT);
+                break;
+            case ActionKey.ACTION_MOVE_RIGHT:
+                robot.keyRelease(KeyEvent.VK_RIGHT);
+                break;
+            case ActionKey.ACTION_JUMP:
+                robot.keyRelease(KeyEvent.VK_SPACE);
+                break;
+            case "esc":
+                robot.keyRelease(KeyEvent.VK_ESCAPE);
+                break;
+            case ActionKey.ACTION_ENTER:
+                robot.keyRelease(KeyEvent.VK_ENTER);
+                break;
+            case ActionKey.ACTION_SWIPE:
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+                break;
+        }
+    }
+
+    private void handleActionVolumeControl(String execute, String description) {
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+            return;
+        }
+        switch (description) {
+            case "volume_up":
+                robot.keyPress(KeyEvent.VK_UP);
+                robot.keyRelease(KeyEvent.VK_UP);
+                break;
+            case "volume_down":
+                robot.keyPress(KeyEvent.VK_DOWN);
+                robot.keyRelease(KeyEvent.VK_DOWN);
+                break;
+            case "open_volume_control":
+                robot.keyPress(KeyEvent.VK_F9);
+                robot.keyRelease(KeyEvent.VK_F9);
+                break;
+            case "close_volume_control":
+                robot.keyPress(KeyEvent.VK_F9);
+                robot.keyRelease(KeyEvent.VK_F9);
                 break;
         }
     }
@@ -380,6 +478,36 @@ public class Server implements Runnable {
             case "enter":
                 handleActionEnter(execute, description);
                 break;
+            case "volume_control":
+                handleActionVolumeControl(execute, description);
+                break;
         }
+    }
+
+    private static String getIPAddress() {
+        try {
+            Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+            while (interfaces.hasMoreElements()) {
+                NetworkInterface iface = interfaces.nextElement();
+                // filters out 127.0.0.1 and inactive interfaces
+                if (iface.isLoopback() || !iface.isUp())
+                    continue;
+
+                Enumeration<InetAddress> addresses = iface.getInetAddresses();
+                while(addresses.hasMoreElements()) {
+                    InetAddress addr = addresses.nextElement();
+
+                    // *EDIT*
+                    if (addr instanceof Inet6Address) continue;
+
+                    String ip = addr.getHostAddress();
+                    System.out.println(iface.getDisplayName() + "\n" + ip);
+                    return ip;
+                }
+            }
+        } catch (SocketException e) {
+            throw new RuntimeException(e);
+        }
+        return "Can't get local IP address.";
     }
 }

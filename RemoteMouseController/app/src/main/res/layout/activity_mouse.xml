@@ -7,25 +7,67 @@
     android:orientation="vertical"
     tools:context="hr.apps.maltar.remotemousecontroller.MouseActivity">
 
-    <View
-        android:id="@+id/mouse_view"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"/>
+        android:layout_weight="1.5"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/main_enter_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="enter"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/keyboard_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="key_b"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="10"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/keyboard_button"
-            android:layout_width="wrap_content"
+        <View
+            android:id="@+id/mouse_view"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="key"/>
+            android:layout_weight="9"/>
+
+        <FrameLayout
+            android:id="@+id/volume_fragment_container"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"/>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"

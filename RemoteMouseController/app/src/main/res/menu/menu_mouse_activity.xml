@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/open_kalimba_activity"
+        android:title="Kalimba"
+    />
+    <item
+        android:id="@+id/open_volume_fragment"
+        android:title="Volume"
+        />
+</menu>

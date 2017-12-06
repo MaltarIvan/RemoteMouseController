@@ -6,6 +6,8 @@ import android.os.Parcelable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import hr.apps.maltar.remotemousecontroller.params.ActionKey;
+
 /**
  * Created by Maltar on 10.10.2017..
  */
@@ -36,7 +38,11 @@ public class Action implements Parcelable {
     }
 
     public static Action makeEnterAction(int code) {
-        return new Action("enter", String.valueOf(code));
+        return new Action(ActionKey.ACTION_ENTER, String.valueOf(code));
+    }
+
+    public static Action makeVolumeControlAction(String volumeControl) {
+        return new Action("volume_control", volumeControl);
     }
 
     @Override

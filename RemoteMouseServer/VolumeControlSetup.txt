@@ -1,0 +1,2 @@
+1) add shortcut on desktop with target: %windir%\System32\SndVol.exe -f 49825268
+2) in shortcut properties add F9 key as shortcut key
