@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.*;
 import java.util.Enumeration;
+
+import maltar.apps.remoteMouseServer.servers.BluetoothServer;
 import maltar.apps.remoteMouseServer.servers.WiFiServer;
 
 import javax.swing.*;
@@ -29,9 +31,11 @@ public class RemoteMouse {
     public static JLabel labelPort;
 
     private static WiFiServer wiFiServer;
+    private static BluetoothServer bluetoothServer;
 
     public static void main(String[] args) {
         wiFiServer = new WiFiServer(PORT);
+        bluetoothServer = new BluetoothServer();
 
         JFrame frame = new JFrame("Remote Mouse RemoteMouse");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,6 +65,7 @@ public class RemoteMouse {
             @Override
             public void actionPerformed(ActionEvent e) {
                 makeBluetoothPane(frame);
+                bluetoothServer.start();
             }
         });
         pane.add(labelDirection);
@@ -131,7 +136,7 @@ public class RemoteMouse {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    wiFiServer.close();
+                    bluetoothServer.close();
                     makeHomePane(frame);
                 } catch (IOException e1) {
                     e1.printStackTrace();
