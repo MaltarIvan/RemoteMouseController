@@ -45,6 +45,10 @@ public class Action implements Parcelable {
         return new Action("volume_control", volumeControl);
     }
 
+    public static Action makeExitAction() {
+        return new Action(ActionKey.ACTION_EXIT, "");
+    }
+
     @Override
     public String toString() {
         return "Action{" +

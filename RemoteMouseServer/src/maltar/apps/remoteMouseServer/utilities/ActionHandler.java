@@ -1,133 +1,22 @@
-package maltar.apps.remoteMouseServer;
+package maltar.apps.remoteMouseServer.utilities;
+
+import maltar.apps.remoteMouseServer.params.ActionKey;
+import maltar.apps.remoteMouseServer.params.ClientKeyEvents;
+import org.json.JSONObject;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.net.*;
-import java.util.Enumeration;
-
-import maltar.apps.remoteMouseServer.params.ActionKey;
-import maltar.apps.remoteMouseServer.params.ClientKeyEvents;
-import org.json.*;
-
-import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EmptyBorder;
 
 /**
- * Created by Maltar on 10.10.2017..
+ * Created by Maltar on 14.2.2018..
  */
-public class Server implements Runnable {
-    private static final int PORT = 8888;
-    private Socket socket;
-    private ServerSocket serverSocket;
-    private Thread thread;
-    private DataInputStream inputStream;
-    private static JLabel labelActions;
-    private static JLabel labelIP;
-    private static JLabel labelPort;
+public class ActionHandler {
+    private ActionHandler(){
 
-    public Server(int port) {
-        try {
-            System.out.println("Binding to port " + port + ", please wait ...");
-            serverSocket = new ServerSocket(port);
-            System.out.println("Server started: " + serverSocket);
-            start();
-        } catch (IOException ioe) {
-            System.out.println(ioe);
-        }
     }
 
-    private void start() {
-        if (thread == null) {
-            thread = new Thread(this);
-            thread.start();
-        }
-    }
-
-    public void open() throws IOException {
-        inputStream = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
-    }
-
-    public void close() throws IOException {
-        if (socket != null) socket.close();
-        if (inputStream != null) inputStream.close();
-        thread = null;
-    }
-
-    @Override
-    public void run() {
-        while (thread != null) {
-            try {
-                System.out.println("Waiting for a client ...");
-                labelActions.setText("Waiting for a client ...");
-                socket = serverSocket.accept();
-                System.out.println("Client accepted: " + socket);
-                labelActions.setText("Client accepted: " + socket);
-                open();
-                boolean done = false;
-                while (!done) {
-                    try {
-                        String line = inputStream.readUTF();
-                        System.out.println(line);
-                        labelActions.setText(line);
-                        handleAction(line);
-                    } catch (IOException ioe) {
-                        done = true;
-                        System.out.println(ioe);
-                        labelActions.setText(ioe.getMessage());
-                    }
-                }
-            } catch (IOException ioe) {
-                System.out.println("Acceptance Error: " + ioe);
-                labelActions.setText("Acceptance Error: " + ioe);
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Remote Mouse Server");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(400, 300));
-        addComponentsToPane(frame.getContentPane());
-        frame.pack();
-        frame.setVisible(true);
-        Server server = new Server(PORT);
-    }
-
-    private static void addComponentsToPane(Container pane) {
-        pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
-        labelActions = new JLabel();
-        labelIP = new JLabel();
-        labelIP.setText("IP: " + getIPAddress());
-        labelPort = new JLabel();
-        labelPort.setText("PORT: " + String.valueOf(PORT));
-
-        Border labelIPBorder = labelIP.getBorder();
-        Border labelIPMargin = new EmptyBorder(10,10,10,10);
-
-        Border labelPortBorder = labelIP.getBorder();
-        Border labelPortMargin = new EmptyBorder(10,10,70,10);
-
-        labelIP.setBorder(new CompoundBorder(labelIPBorder, labelIPMargin));
-        labelPort.setBorder(new CompoundBorder(labelPortBorder, labelPortMargin));
-
-        Font labelIPFont = labelIP.getFont();
-        Font labelPortFont = labelPort.getFont();
-
-        labelIP.setFont(new Font(labelIPFont.getName(), Font.BOLD, labelIPFont.getSize() * 2));
-        labelPort.setFont(new Font(labelPortFont.getName(), Font.BOLD, labelIPFont.getSize() + 5));
-
-        pane.add(labelIP);
-        pane.add(labelPort);
-        pane.add(labelActions);
-    }
-
-    private void handleActionMove(String execute, String description) {
+    private static void handleActionMove(String execute, String description) {
         int xBeginIndex = description.indexOf("x") + 2;
         int xEndIndex = description.indexOf(":");
 
@@ -167,7 +56,7 @@ public class Server implements Runnable {
         }
     }
 
-    private void handleActionClick(String execute, String description) {
+    private static void handleActionClick(String execute, String description) {
         Robot robot = null;
         try {
             robot = new Robot();
@@ -182,10 +71,45 @@ public class Server implements Runnable {
             case ActionKey.ACTION_SCROLL_DOWN:
                 robot.mouseWheel(1);
                 break;
+            case ActionKey.ACTION_CLICKER:
+                double mouseX = MouseInfo.getPointerInfo().getLocation().getX();
+                double mouseY = MouseInfo.getPointerInfo().getLocation().getY();
+                if (mouseX > -1910 && mouseX < -1656 && mouseY > 475 && mouseY < 755) {
+                    for (int i = 0; i < 1000000000; i++) {
+                        mouseX = MouseInfo.getPointerInfo().getLocation().getX();
+                        mouseY = MouseInfo.getPointerInfo().getLocation().getY();
+                        if (!(mouseX > -1910 && mouseX < -1656 && mouseY > 475 && mouseY < 755)) {
+                            break;
+                        }
+                        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+                        try {
+                            Thread.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                break;
+            case ActionKey.ACTION_CLICKER_PR:
+                for (int i = 0; i < 1000000000; i++) {
+                    mouseX = MouseInfo.getPointerInfo().getLocation().getX();
+                    mouseY = MouseInfo.getPointerInfo().getLocation().getY();
+                    robot.mouseMove(-1790, 622);
+                    robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                    robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+                    robot.mouseMove((int)mouseX, (int)mouseY);
+                    try {
+                        Thread.sleep(10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                break;
         }
     }
 
-    private void handleActionPress(String execute, String description) {
+    private static void handleActionPress(String execute, String description) {
         Robot robot = null;
         try {
             robot = new Robot();
@@ -196,6 +120,7 @@ public class Server implements Runnable {
         switch (description) {
             case ActionKey.ACTION_LEFT_MOUSE:
                 robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                System.out.println(MouseInfo.getPointerInfo().getLocation());
                 break;
             case ActionKey.ACTION_RIGHT_MOUSE:
                 robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
@@ -221,7 +146,7 @@ public class Server implements Runnable {
         }
     }
 
-    private void handleActionEnter(String execute, String description) {
+    private static void handleActionEnter(String execute, String description) {
         int keyEvent = Integer.parseInt(description);
         Robot robot = null;
         try {
@@ -394,7 +319,7 @@ public class Server implements Runnable {
         }
     }
 
-    private void handleActionRelease(String execute, String description) {
+    private static void handleActionRelease(String execute, String description) {
         Robot robot = null;
         try {
             robot = new Robot();
@@ -430,7 +355,7 @@ public class Server implements Runnable {
         }
     }
 
-    private void handleActionVolumeControl(String execute, String description) {
+    private static void handleActionVolumeControl(String execute, String description) {
         Robot robot = null;
         try {
             robot = new Robot();
@@ -458,7 +383,7 @@ public class Server implements Runnable {
         }
     }
 
-    private void handleAction(String action) {
+    public static void handleAction(String action) {
         JSONObject jsonObject = new JSONObject(action);
         String execute = jsonObject.getString("execute");
         String description = jsonObject.getString("description");
@@ -481,33 +406,13 @@ public class Server implements Runnable {
             case "volume_control":
                 handleActionVolumeControl(execute, description);
                 break;
+            case ActionKey.ACTION_EXIT:
+                exit();
+                break;
         }
     }
 
-    private static String getIPAddress() {
-        try {
-            Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
-            while (interfaces.hasMoreElements()) {
-                NetworkInterface iface = interfaces.nextElement();
-                // filters out 127.0.0.1 and inactive interfaces
-                if (iface.isLoopback() || !iface.isUp())
-                    continue;
-
-                Enumeration<InetAddress> addresses = iface.getInetAddresses();
-                while(addresses.hasMoreElements()) {
-                    InetAddress addr = addresses.nextElement();
-
-                    // *EDIT*
-                    if (addr instanceof Inet6Address) continue;
-
-                    String ip = addr.getHostAddress();
-                    System.out.println(iface.getDisplayName() + "\n" + ip);
-                    return ip;
-                }
-            }
-        } catch (SocketException e) {
-            throw new RuntimeException(e);
-        }
-        return "Can't get local IP address.";
+    private static void exit() {
+        System.exit(0);
     }
 }

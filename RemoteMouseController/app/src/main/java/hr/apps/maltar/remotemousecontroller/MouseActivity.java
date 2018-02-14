@@ -37,6 +37,8 @@ public class MouseActivity extends AppCompatActivity {
     private Button scrollDownButton;
     private Button keyboardButton;
     private Button mainEnterButton;
+    private Button clickerButton;
+    private Button clickerPremiumButton;
 
     private Point point1;
     private Point point2;
@@ -99,6 +101,10 @@ public class MouseActivity extends AppCompatActivity {
         scrollDownButton = (Button) findViewById(R.id.scroll_down_button);
 
         mainEnterButton = (Button) findViewById(R.id.main_enter_button);
+
+        clickerButton = (Button) findViewById(R.id.main_clicker_button);
+
+        clickerPremiumButton = (Button) findViewById(R.id.main_clicker_pr_button);
 
         mainEnterButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -194,6 +200,28 @@ public class MouseActivity extends AppCompatActivity {
                         break;
                 }
                 return true;
+            }
+        });
+
+        clickerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Action action = Action.makeClickAction(ActionKey.ACTION_CLICKER);
+                Intent intent = new Intent(getApplicationContext(), SendDataIntentService.class);
+                intent.putExtra(IntentKey.ACTION_KEY, action);
+                startService(intent);
+            }
+        });
+
+        clickerPremiumButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*
+                Action action = Action.makeClickAction(ActionKey.ACTION_CLICKER_PR);
+                Intent intent = new Intent(getApplicationContext(), SendDataIntentService.class);
+                intent.putExtra(IntentKey.ACTION_KEY, action);
+                startService(intent);
+                */
             }
         });
 
@@ -360,6 +388,12 @@ public class MouseActivity extends AppCompatActivity {
                 return true;
             case R.id.open_volume_fragment:
                 return showVolumeFragment();
+            case R.id.make_exit_action:
+                Action action = Action.makeExitAction();
+                Intent intent2 = new Intent(getApplicationContext(), SendDataIntentService.class);
+                intent2.putExtra(IntentKey.ACTION_KEY, action);
+                startService(intent2);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

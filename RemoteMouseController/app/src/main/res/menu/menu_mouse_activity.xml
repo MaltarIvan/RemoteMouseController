@@ -8,4 +8,8 @@
         android:id="@+id/open_volume_fragment"
         android:title="Volume"
         />
+    <item
+        android:id="@+id/make_exit_action"
+        android:title="Exit"
+        />
 </menu>

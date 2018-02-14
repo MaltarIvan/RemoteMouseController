@@ -17,4 +17,7 @@ public class ActionKey {
     public static final String ACTION_MOVE_RIGHT = "move_right";
     public static final String ACTION_ESC = "esc";
     public static final String ACTION_SWIPE = "swipe";
+    public static final String ACTION_CLICKER = "clicker";
+    public static final String ACTION_CLICKER_PR = "clicker_premium";
+    public static final String ACTION_EXIT = "exit";
 }
