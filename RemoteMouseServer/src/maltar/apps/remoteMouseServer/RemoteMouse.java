@@ -35,13 +35,14 @@ public class RemoteMouse {
 
     public static void main(String[] args) {
         wiFiServer = new WiFiServer(PORT);
-        bluetoothServer = new BluetoothServer();
+        // bluetoothServer = new BluetoothServer();
 
         JFrame frame = new JFrame("Remote Mouse RemoteMouse");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(400, 300));
 
-        makeHomePane(frame);
+        // makeHomePane(frame);
+        makeWiFiPane(frame);
     }
 
     private static  void makeHomePane(JFrame frame) {
@@ -103,6 +104,7 @@ public class RemoteMouse {
         labelIP.setFont(new Font(labelIPFont.getName(), Font.BOLD, labelIPFont.getSize() * 2));
         labelPort.setFont(new Font(labelPortFont.getName(), Font.BOLD, labelIPFont.getSize() + 5));
 
+        /*
         buttonBack = new JButton("Back");
         buttonBack.addActionListener(new ActionListener() {
             @Override
@@ -115,14 +117,16 @@ public class RemoteMouse {
                 }
             }
         });
+        */
 
         pane.add(labelIP);
         pane.add(labelPort);
         pane.add(labelActions);
-        pane.add(buttonBack);
+        // pane.add(buttonBack);
 
         frame.pack();
         frame.setVisible(true);
+        wiFiServer.start();
     }
 
     private static void makeBluetoothPane(JFrame frame) {
