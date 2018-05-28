@@ -106,6 +106,26 @@ public class ActionHandler {
                     }
                 }
                 break;
+            case ActionKey.ACTION_UP:
+                robot.keyPress(KeyEvent.VK_UP);
+                robot.keyRelease(KeyEvent.VK_UP);
+                break;
+            case ActionKey.ACTION_LEFT:
+                robot.keyPress(KeyEvent.VK_LEFT);
+                robot.keyRelease(KeyEvent.VK_LEFT);
+                break;
+            case ActionKey.ACTION_RIGHT:
+                robot.keyPress(KeyEvent.VK_RIGHT);
+                robot.keyRelease(KeyEvent.VK_RIGHT);
+                break;
+            case ActionKey.ACTION_DOWN:
+                robot.keyPress(KeyEvent.VK_DOWN);
+                robot.keyRelease(KeyEvent.VK_DOWN);
+                break;
+            case ActionKey.ACTION_ENTER:
+                robot.keyPress(KeyEvent.VK_ENTER);
+                robot.keyRelease(KeyEvent.VK_ENTER);
+                break;
         }
     }
 
@@ -313,8 +333,8 @@ public class ActionHandler {
                 robot.keyRelease(KeyEvent.VK_ENTER);
                 break;
             case ClientKeyEvents.KEYCODE_SHIFT_LEFT:
-                robot.keyPress(KeyEvent.VK_SPACE);
-                robot.keyRelease(KeyEvent.VK_SPACE);
+                robot.keyPress(KeyEvent.VK_SHIFT);
+                robot.keyRelease(KeyEvent.VK_SHIFT);
                 break;
         }
     }

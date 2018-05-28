@@ -20,4 +20,8 @@ public class ActionKey {
     public static final String ACTION_CLICKER = "clicker";
     public static final String ACTION_CLICKER_PR = "clicker_premium";
     public static final String ACTION_EXIT = "exit";
+    public static final String ACTION_UP = "up";
+    public static final String ACTION_LEFT = "left";
+    public static final String ACTION_RIGHT = "right";
+    public static final String ACTION_DOWN = "down";
 }

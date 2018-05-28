@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="hr.apps.maltar.remotemousecontroller.KeyboardActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/keyboard_act_text_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"/>
+
+        <Button
+            android:id="@+id/keyboard_act_clr_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="CLEAR"/>
+
+        <Button
+            android:id="@+id/keyboard_act_back_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="BACK"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/keyboard_act_1_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="1"/>
+
+            <Button
+                android:id="@+id/keyboard_act_2_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2"/>
+
+            <Button
+                android:id="@+id/keyboard_act_3_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="3"/>
+
+            <Button
+                android:id="@+id/keyboard_act_4_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="4"/>
+
+            <Button
+                android:id="@+id/keyboard_act_5_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="5"/>
+
+            <Button
+                android:id="@+id/keyboard_act_6_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="6"/>
+
+            <Button
+                android:id="@+id/keyboard_act_7_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="7"/>
+
+            <Button
+                android:id="@+id/keyboard_act_8_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="8"/>
+
+            <Button
+                android:id="@+id/keyboard_act_9_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="9"/>
+
+            <Button
+                android:id="@+id/keyboard_act_0_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0"/>
+
+            <ImageButton
+                android:id="@+id/keyboard_act_backspace_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/backspace_icon"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/keyboard_act_q_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="q"/>
+
+            <Button
+                android:id="@+id/keyboard_act_w_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="w"/>
+
+            <Button
+                android:id="@+id/keyboard_act_e_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="e"/>
+
+            <Button
+                android:id="@+id/keyboard_act_r_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="r"/>
+
+            <Button
+                android:id="@+id/keyboard_act_t_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="t"/>
+
+            <Button
+                android:id="@+id/keyboard_act_z_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="z"/>
+
+            <Button
+                android:id="@+id/keyboard_act_u_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="u"/>
+
+            <Button
+                android:id="@+id/keyboard_act_i_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="i"/>
+
+            <Button
+                android:id="@+id/keyboard_act_o_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="o"/>
+
+            <Button
+                android:id="@+id/keyboard_act_p_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="p"/>
+
+            <ImageButton
+                android:id="@+id/keyboard_act_up_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/up_arrow_icon"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/keyboard_act_a_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="a"/>
+
+            <Button
+                android:id="@+id/keyboard_act_s_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="s"/>
+
+            <Button
+                android:id="@+id/keyboard_act_d_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="d"/>
+
+            <Button
+                android:id="@+id/keyboard_act_f_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="f"/>
+
+            <Button
+                android:id="@+id/keyboard_act_g_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="g"/>
+
+            <Button
+                android:id="@+id/keyboard_act_h_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="h"/>
+
+            <Button
+                android:id="@+id/keyboard_act_j_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="j"/>
+
+            <Button
+                android:id="@+id/keyboard_act_k_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="k"/>
+
+            <Button
+                android:id="@+id/keyboard_act_l_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="l"/>
+
+            <ImageButton
+                android:id="@+id/keyboard_act_left_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/left_arrow_icon"
+                android:scaleType="fitCenter"/>
+
+            <ImageButton
+                android:id="@+id/keyboard_act_right_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/right_arrow_icon"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/keyboard_act_y_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.375"
+                android:text="y"/>
+
+            <Button
+                android:id="@+id/keyboard_act_x_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.375"
+                android:text="x"/>
+
+            <Button
+                android:id="@+id/keyboard_act_c_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.375"
+                android:text="c"/>
+
+            <Button
+                android:id="@+id/keyboard_act_v_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.375"
+                android:text="v"/>
+
+            <Button
+                android:id="@+id/keyboard_act_b_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.375"
+                android:text="b"/>
+
+            <Button
+                android:id="@+id/keyboard_act_n_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.375"
+                android:text="n"/>
+
+            <Button
+                android:id="@+id/keyboard_act_m_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.375"
+                android:text="m"/>
+
+            <Button
+                android:id="@+id/keyboard_act_comma_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text=","/>
+
+            <Button
+                android:id="@+id/keyboard_act_dot_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="."/>
+
+            <Button
+                android:id="@+id/keyboard_act_quest_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="\?"/>
+
+            <Button
+                android:id="@+id/keyboard_act_exscl_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="\!"/>
+
+            <ImageButton
+                android:id="@+id/keyboard_act_down_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.375"
+                android:src="@drawable/down_arrow_icon"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/keyboard_act_shift_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/shift_icon"
+                android:scaleType="fitCenter"/>
+
+            <Button
+                android:id="@+id/keyboard_act_ctrl_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="ctrl"/>
+
+            <Button
+                android:id="@+id/keyboard_act_space_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:text="___"/>
+
+            <ImageButton
+                android:id="@+id/keyboard_act_enter_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/enter_icon"
+                android:scaleType="fitCenter"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package hr.apps.maltar.remotemousecontroller;
+package hr.apps.maltar.remotemousecontroller.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import hr.apps.maltar.remotemousecontroller.MouseActivity;
+import hr.apps.maltar.remotemousecontroller.R;
 import hr.apps.maltar.remotemousecontroller.action.Action;
 import hr.apps.maltar.remotemousecontroller.params.IntentKey;
 import hr.apps.maltar.remotemousecontroller.services.SendDataIntentService;

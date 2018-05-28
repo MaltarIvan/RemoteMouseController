@@ -16,7 +16,7 @@ import hr.apps.maltar.remotemousecontroller.services.ConnectionIntentService;
 public class EnterIPActivity extends AppCompatActivity {
     private static final String LOG_TAG = "ENTER_IP_ACTIVITY";
 
-    private static final String DEFAULT_IP = "192.168.5.10";
+    private static final String DEFAULT_IP = "192.168.5.12";
     private static final String DEFAULT_PORT = "8888";
 
     public static Socket socket;

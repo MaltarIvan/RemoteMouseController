@@ -35,13 +35,13 @@ public class RemoteMouse {
 
     public static void main(String[] args) {
         wiFiServer = new WiFiServer(PORT);
-        // bluetoothServer = new BluetoothServer();
+        bluetoothServer = new BluetoothServer();
 
         JFrame frame = new JFrame("Remote Mouse RemoteMouse");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(400, 300));
 
-        // makeHomePane(frame);
+        //makeHomePane(frame);
         makeWiFiPane(frame);
     }
 

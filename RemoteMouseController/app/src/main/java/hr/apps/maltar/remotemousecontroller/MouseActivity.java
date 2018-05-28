@@ -19,6 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import hr.apps.maltar.remotemousecontroller.action.Action;
+import hr.apps.maltar.remotemousecontroller.fragments.VolumeFragment;
 import hr.apps.maltar.remotemousecontroller.params.ActionKey;
 import hr.apps.maltar.remotemousecontroller.params.IntentKey;
 import hr.apps.maltar.remotemousecontroller.services.SendDataIntentService;
@@ -38,7 +39,7 @@ public class MouseActivity extends AppCompatActivity {
     private Button keyboardButton;
     private Button mainEnterButton;
     private Button clickerButton;
-    private Button clickerPremiumButton;
+    private Button keyboardActivityButton;
 
     private Point point1;
     private Point point2;
@@ -104,7 +105,7 @@ public class MouseActivity extends AppCompatActivity {
 
         clickerButton = (Button) findViewById(R.id.main_clicker_button);
 
-        clickerPremiumButton = (Button) findViewById(R.id.main_clicker_pr_button);
+        keyboardActivityButton = (Button) findViewById(R.id.main_keyboard_ac_button);
 
         mainEnterButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -127,25 +128,23 @@ public class MouseActivity extends AppCompatActivity {
             }
         });
 
-        scrollUpButton.setOnTouchListener(new View.OnTouchListener() {
+        scrollUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View v) {
                 Action action = Action.makeClickAction(ActionKey.ACTION_SCROLL_UP);
                 Intent intent = new Intent(getApplicationContext(), SendDataIntentService.class);
                 intent.putExtra(IntentKey.ACTION_KEY, action);
                 startService(intent);
-                return true;
             }
         });
 
-        scrollDownButton.setOnTouchListener(new View.OnTouchListener() {
+        scrollDownButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View v) {
                 Action action = Action.makeClickAction(ActionKey.ACTION_SCROLL_DOWN);
                 Intent intent = new Intent(getApplicationContext(), SendDataIntentService.class);
                 intent.putExtra(IntentKey.ACTION_KEY, action);
                 startService(intent);
-                return true;
             }
         });
 
@@ -203,25 +202,18 @@ public class MouseActivity extends AppCompatActivity {
             }
         });
 
+
         clickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Action action = Action.makeClickAction(ActionKey.ACTION_CLICKER);
-                Intent intent = new Intent(getApplicationContext(), SendDataIntentService.class);
-                intent.putExtra(IntentKey.ACTION_KEY, action);
-                startService(intent);
             }
         });
 
-        clickerPremiumButton.setOnClickListener(new View.OnClickListener() {
+        keyboardActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*
-                Action action = Action.makeClickAction(ActionKey.ACTION_CLICKER_PR);
-                Intent intent = new Intent(getApplicationContext(), SendDataIntentService.class);
-                intent.putExtra(IntentKey.ACTION_KEY, action);
-                startService(intent);
-                */
+                Intent intent = new Intent(getApplicationContext(), KeyboardActivity.class);
+                startActivity(intent);
             }
         });
 
